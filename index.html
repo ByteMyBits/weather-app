@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+
+    <div class="app-container">
+
+        <header>
+
+            <h1 class="title">The Weather</h1>
+            <!-- Do I need a label? How to make accessible -->
+            <!-- turn autocomplete off -->
+            <form class="search-bar" action="action()">
+                <input type="text" placeholder="Find the weather in..." name="search">
+                <button id="submit-button" type="submit">Search</button>
+            </form>
+
+        </header>
+
+        <main>
+
+            <div class="weather-container">
+
+                <section class="country-date-icon">
+
+                    <h2 id="country-name">London</h2>
+                    <h3 id="date">Date goes here</h3>
+                    <div id="hero-weather-icon">Icon goes here</div>
+
+                </section>
+
+                <section class="weather-details">
+
+                    <p>Feels like:<span id="feels-like"></span></p>
+                    <p>Humidity:<span id="humidity"></span></p>
+                    <p>Wind speed:<span id="wind-speed"></span></p>
+                    <p>UV index:<span id="uv-index"></span></p>
+
+                </section>
+
+                <section class="five-day-forecast">
+                    <!-- should these be in a list? -->
+                    <!-- should the cards be articles? -->
+                    <div class="card card-1">
+                        <h4 id="card-date">21st April</h4>
+                        <div id="card-icon">Sun</div>
+                        <span id="card-temp">20C</span>
+                    </div>
+
+                    <div class="card card-2">
+                        <h4 id="card-date">21st April</h4>
+                        <div id="card-icon">Sun</div>
+                        <span id="card-temp">20C</span>
+                    </div>
+
+                    <div class="card card-3">
+                        <h4 id="card-date">21st April</h4>
+                        <div id="card-icon">Sun</div>
+                        <span id="card-temp">20C</span>
+                    </div>
+
+                    <div class="card card-4">
+                        <h4 id="card-date">21st April</h4>
+                        <div id="card-icon">Sun</div>
+                        <span id="card-temp">20C</span>
+                    </div>
+
+                    <div class="card card-5">
+                        <h4 id="card-date">21st April</h4>
+                        <div id="card-icon">Sun</div>
+                        <span id="card-temp">20C</span>
+                    </div>
+
+                </section>
+
+            </div>
+
+
+        </main>
+
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

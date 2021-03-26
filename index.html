@@ -6,91 +6,148 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
-<body>
+<body class="background-theme">
 
 
     <div class="app-container">
 
         <header>
 
-            <h1 class="title">The Weather</h1>
+            <!-- <h1 class="title">The Weather</h1> -->
             <!-- Do I need a label? How to make accessible -->
             <!-- turn autocomplete off -->
-            <form class="search-bar" action="action()">
-                <input type="text" placeholder="Find the weather in..." name="search">
-                <button id="submit-button" type="submit">Search</button>
+            <form class="search-form" action="action()">
+                <input id="search-bar" type="text" placeholder="Search for the weather in..." name="search">
+                <button id="submit-button" type="submit">
+                    <svg width="30px" height="30px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62.33 77.98">
+                        <g data-name="Layer 2">
+                            <path
+                                d="M28.73.57a28 28 0 00-13.51 47.9L.83 70.23a5 5 0 008.34 5.51l14.45-21.86A28 28 0 1028.73.57zm9.19 45.07A18 18 0 1152 24.41a18 18 0 01-14.08 21.23z"
+                                fill="#484848" data-name="Layer 1" />
+                        </g>
+                    </svg>
+                </button>
             </form>
 
         </header>
 
-        <main>
 
-            <div class="weather-container">
 
-                <section class="country-date-icon">
+        <div class="weather-container">
+            <!-- <main> -->
+            <section class="place-date-time">
 
-                    <h2 id="country-name">London</h2>
-                    <h3 id="date">Date goes here</h3>
-                    <div id="hero-weather-icon">Icon goes here</div>
+                <h2 id="place-name"></h2>
+                <h3><span id="date"></span></h3>
+
+            </section>
+            <div class="forecast-container">
+                <section class="weather-type">
+
+                    <p id="description"></p>
+                    <div id="hero-weather-icon"><img height="120px" width="120px" src="./assets/images/placeholder.png"
+                            alt="placeholder"></div>
 
                 </section>
 
                 <section class="weather-details">
+                    <div class="temperatures">
+                        <p id="temp"></p>
+                        <div class="temp-max">
+                            <span id="temp-max"></span>
+                            <svg width=".75rem" height=".75rem" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 28.8 25.6">
+                                <g data-name="Layer 2">
+                                    <path d="M12 1L0 22a3 3 0 003 4h23a3 3 0 002-4L17 1a3 3 0 00-5 0z" fill="#fff"
+                                        data-name="Layer 1" />
+                                </g>
+                            </svg>
 
-                    <p>Feels like:<span id="feels-like"></span></p>
-                    <p>Humidity:<span id="humidity"></span></p>
-                    <p>Wind speed:<span id="wind-speed"></span></p>
-                    <p>UV index:<span id="uv-index"></span></p>
+                        </div>
 
-                </section>
-
-                <section class="five-day-forecast">
-                    <!-- should these be in a list? -->
-                    <!-- should the cards be articles? -->
-                    <div class="card card-1">
-                        <h4 id="card-date">21st April</h4>
-                        <div id="card-icon">Sun</div>
-                        <span id="card-temp">20C</span>
+                        <div class="temp-min">
+                            <span id="temp-min"></span>
+                            <svg width=".75rem" height=".75rem" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 28.8 25.6">
+                                <g data-name="Layer 2">
+                                    <path d="M12 24L0 4a3 3 0 013-4h23a3 3 0 012 4L17 24a3 3 0 01-5 0z" fill="#fff"
+                                        data-name="Layer 1" />
+                                </g>
+                            </svg>
+                        </div>
                     </div>
 
-                    <div class="card card-2">
-                        <h4 id="card-date">21st April</h4>
-                        <div id="card-icon">Sun</div>
-                        <span id="card-temp">20C</span>
+                    <div class="more-details">
+                        <p>Feels like: <span id="feels-like"></span></p>
+                        <p>Humidity: <span id="humidity"></span></p>
+                        <p>Wind speed: <span id="wind-speed"></span><svg title="Search for weather"
+                                class="wind-direction" height="1rem" width="1rem" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 29 66.1">
+                                <g id="wind-direction">
+                                    <path
+                                        d="M27 26a2 2 0 002-3l-7-11-6-11a2 2 0 00-3 0L7 12 0 23a2 2 0 002 2h7a2 2 0 011 2v35a4 4 0 004 4 4 4 0 005-4V27a2 2 0 011-1z"
+                                        fill="#fff" />
+                                </g>
+                            </svg>
+                        </p>
+                        <div class="uv-index">
+                            <p>UV index:</p>
+                            <div id="uv-index"></div>
+                        </div>
                     </div>
-
-                    <div class="card card-3">
-                        <h4 id="card-date">21st April</h4>
-                        <div id="card-icon">Sun</div>
-                        <span id="card-temp">20C</span>
-                    </div>
-
-                    <div class="card card-4">
-                        <h4 id="card-date">21st April</h4>
-                        <div id="card-icon">Sun</div>
-                        <span id="card-temp">20C</span>
-                    </div>
-
-                    <div class="card card-5">
-                        <h4 id="card-date">21st April</h4>
-                        <div id="card-icon">Sun</div>
-                        <span id="card-temp">20C</span>
-                    </div>
-
                 </section>
 
             </div>
 
 
-        </main>
+
+            <section class="five-day-forecast">
+                <!-- should these be in a list? -->
+                <!-- should the cards be articles? -->
+                <div class="card card-1">
+                    <h4 id="card-date">21st April</h4>
+                    <div id="card-icon">Sun</div>
+                    <span id="card-temp">20C</span>
+                </div>
+
+                <div class="card card-2">
+                    <h4 id="card-date">21st April</h4>
+                    <div id="card-icon">Sun</div>
+                    <span id="card-temp">20C</span>
+                </div>
+
+                <div class="card card-3">
+                    <h4 id="card-date">21st April</h4>
+                    <div id="card-icon">Sun</div>
+                    <span id="card-temp">20C</span>
+                </div>
+
+                <div class="card card-4">
+                    <h4 id="card-date">21st April</h4>
+                    <div id="card-icon">Sun</div>
+                    <span id="card-temp">20C</span>
+                </div>
+
+                <div class="card card-5">
+                    <h4 id="card-date">21st April</h4>
+                    <div id="card-icon">Sun</div>
+                    <span id="card-temp">20C</span>
+                </div>
+
+            </section>
+            <!-- </main> -->
+        </div>
 
     </div>
 
     <script src="./assets/js/script.js"></script>
+    <!-- <script src="./assets/js/test.js"></script> -->
 </body>
 
 </html>

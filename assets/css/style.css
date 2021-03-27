@@ -1,5 +1,6 @@
 html {
     font-size: 24px;
+    /* font-size: calc(0.015 * 80vw); */
 }
 
 * {
@@ -12,7 +13,7 @@ html {
         font-size: 20px;
     }
     .weather-container {
-        height: 60%;
+        height: 50%;
         width: 100%;
     }
 }
@@ -23,7 +24,7 @@ html {
         font-size: 16px;
     }
     .weather-container {
-        height: 60%;
+        height: 50%;
         width: 100%;
     }
 }
@@ -35,6 +36,11 @@ body {
     background: linear-gradient(to bottom, #4A00E0, #8E2DE2); */
     color: white;
     background-color: rgb(34, 34, 34);
+    /* below flex to center, this because I changed app container width/height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 5s;
 }
 
 .weather-container {
@@ -99,35 +105,52 @@ body {
     justify-content: flex-start;
 }
 
+.temperatures>* {
+    margin-right: .5rem;
+}
+
 #temp, #description {
     font-size: 2rem;
 }
 
+#temp-max, #temp-min {
+    margin-right: -.15rem;
+}
+
+.temp-max>svg, .temp-min>svg {
+    margin-bottom: 0.3rem;
+}
+
 .background-snow {
+    transition-duration: 1s;
     background: #6190E8;
     background: -webkit-linear-gradient(to top, #A7BFE8, #6190E8);
     background: linear-gradient(to top, #A7BFE8, #6190E8);
 }
 
 .background-clear {
+    transition-duration: 1s;
     background: #56CCF2;
     background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);
     background: linear-gradient(to right, #2F80ED, #56CCF2);
 }
 
 .background-rain {
+    transition-duration: 1s;
     background: #000046;
     background: -webkit-linear-gradient(to top, #1CB5E0, #000046);
     background: linear-gradient(to top, #1CB5E0, #000046);
 }
 
 .background-night {
+    transition-duration: 1s;
     background: #141E30;
     background: -webkit-linear-gradient(to left, #1e334b, #141E30);
     background: linear-gradient(to left, #1e334b, #141E30);
 }
 
 .background-cloudy {
+    transition-duration: 1s;
     background: #8e9eab;
     background: -webkit-linear-gradient(to top, #eef2f3, #8e9eab);
     background: linear-gradient(to top, #eef2f3, #8e9eab);
@@ -135,6 +158,7 @@ body {
 }
 
 .background-heavy-clouds {
+    transition-duration: 1s;
     background: #bdc3c7;
     background: -webkit-linear-gradient(to bottom, #2c3e50, #bdc3c7);
     background: linear-gradient(to bottom, #2c3e50, #bdc3c7);
@@ -146,7 +170,8 @@ body {
     justify-content: center;
     flex-direction: column;
     padding: 2rem 0;
-    height: 100vh;
+    /* can use vh and vw below or %. but doesn't allow screen to be zoomed in */
+    height: 90vh;
     width: 100vw;
 }
 
@@ -217,10 +242,12 @@ input[type=text] {
     transform-origin: center;
     transform-box: fill-box;
     overflow: visible;
+    transition-duration: 1s;
 }
 
 #hero-weather-icon {
-    margin-top: .5rem;
+    /* margin-top: .5rem; */
+    padding-top: 1rem;
 }
 
 .more-details {
@@ -240,4 +267,6 @@ input[type=text] {
     /* background-color: red; */
     border-radius: 25px;
     text-align: center;
+    transition-property: background-color;
+    transition-duration: 1s;
 }

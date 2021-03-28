@@ -16,6 +16,9 @@ html {
         height: 50%;
         width: 100%;
     }
+    .card {
+        width: 22%;
+    }
 }
 
 @media only screen and (max-width: 800px) {
@@ -40,11 +43,29 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 5s;
+    transition: all ease 5s;
+    flex-direction: column;
+}
+
+.app-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem 0;
+    /* can use vh and vw below or %. but doesn't allow screen to be zoomed in */
+    height: 90vh;
+    width: 100vw;
+}
+
+.title-screen {
+    margin-top: -20rem;
+    padding: 2rem;
 }
 
 .weather-container {
     /* min-width: 1400px; */
+    display: none;
     height: 80%;
     width: 80%;
     max-width: 1400px;
@@ -54,9 +75,10 @@ body {
     -webkit-backdrop-filter: blur( 4.5px);
     border-radius: 2.5rem;
     border: 2px solid rgba(230, 229, 229, 0.411);
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     align-items: center;
+    margin-top: 1rem;
 }
 
 .place-date-time {
@@ -81,7 +103,8 @@ body {
     display: flex;
     justify-content: center;
     width: 100%;
-    padding: 1rem;
+    /* padding: 1rem; */
+    margin: 1rem;
 }
 
 .weather-type {
@@ -111,6 +134,7 @@ body {
 
 #temp, #description {
     font-size: 2rem;
+    text-align: end;
 }
 
 #temp-max, #temp-min {
@@ -162,17 +186,6 @@ body {
     background: #bdc3c7;
     background: -webkit-linear-gradient(to bottom, #2c3e50, #bdc3c7);
     background: linear-gradient(to bottom, #2c3e50, #bdc3c7);
-}
-
-.app-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 2rem 0;
-    /* can use vh and vw below or %. but doesn't allow screen to be zoomed in */
-    height: 90vh;
-    width: 100vw;
 }
 
 header {
@@ -247,24 +260,38 @@ input[type=text] {
 
 #hero-weather-icon {
     /* margin-top: .5rem; */
-    padding-top: 1rem;
+    padding-top: 1.5rem;
+}
+
+#hero-weather-icon img {
+    /* margin-top: .5rem; */
+    height: 180px;
 }
 
 .more-details {
-    margin-top: .5rem;
-    height: 100%;
+    padding-top: 1.5rem;
+    height: 80%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+}
+
+#uv-index, #feels-like, #humidity, #wind-speed {
+    font-weight: bold;
 }
 
 .uv-index {
     display: flex;
 }
 
+/* .uv-index:before {
+    margin-left: 2.75rem;
+} */
+
 #uv-index {
-    width: 2.5rem;
-    /* height: 25px; */
     /* background-color: red; */
+    /* padding-left: .5rem; */
+    padding: .2rem .5rem;
     border-radius: 25px;
     text-align: center;
     transition-property: background-color;

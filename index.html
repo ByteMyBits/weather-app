@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <title>Weather by Jack</title>
+    <link id="favicon" rel="shortcut icon" href="./assets/images/clear-day.png" type="image/png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/reset.css">
@@ -14,15 +15,21 @@
 
 <body class="background-theme">
 
-
     <div class="app-container">
 
+        <div class="title-screen">
+
+            <h1>Weather</h1>
+            <h2>by Jack</h2>
+            <img height="250px" src="./assets/images/rainbow.png" alt="rainbow">
+
+        </div>
         <header>
 
             <!-- <h1 class="title">The Weather</h1> -->
             <!-- Do I need a label? How to make accessible -->
             <!-- turn autocomplete off -->
-            <form class="search-form" action="action()">
+            <form id="search-form" class="search-form" action="action()">
                 <input id="search-bar" type="text" placeholder="Search for the weather in..." name="search">
                 <button id="submit-button" type="submit">
                     <svg width="30px" height="30px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62.33 77.98">
@@ -97,10 +104,7 @@
                                 </g>
                             </svg>
                         </p>
-                        <div class="uv-index">
-                            <p>UV index:</p>
-                            <div id="uv-index"></div>
-                        </div>
+                        <p>UV index: <span id="uv-index"></span></p>
                     </div>
                 </section>
 
